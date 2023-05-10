@@ -5,5 +5,5 @@ from infoposts import views
 app_name = 'infoposts'
 
 urlpatterns = [
-    path('', views.root, name='base'),
+    path('', views.root, name='root'),
 ]

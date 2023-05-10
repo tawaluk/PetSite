@@ -1,18 +1,22 @@
 {% load static %}
 
-<nav class="navbar navbar-light" style="background-color: DarkGrey">
+<nav class="navbar navbar-light" style="background-color: #f6f6f6">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'infoposts:base' %}">
-        <img src="{% static 'img/logo.png' %}" width="60" height="60" class="d-inline-block align-top" alt="">
-          <span style="color:red"><em>Глобальное название сайта</em></span> </a>
+      <a class="navbar-brand" href="{% url 'infoposts:root' %}">
+          <img src="{% static 'img/start.jpg' %}" width="50" height="50"
+               class="d-inline-block align-top" alt="">
+          <span style="color:red"><big><em>Help Start Work</em></big></span>
+      </a>
         <ul class="nav nav-pills">
             <li class="nav-item">
-        <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}" href="{% url 'infoposts:base' %}">Об авторе</a>
+        <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}" href="{% url 'infoposts:root' %}">Пункт 1</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if view_name == 'about:tech' %}active{% endif %}" href="{% url 'infoposts:base' %}">Технологии</a>
+        <a class="nav-link {% if view_name == 'about:tech' %}active{% endif %}" href="{% url 'infoposts:root' %}">Пункт 2</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}" href="{% url 'infoposts:root' %}">Пункт 3</a>
       </li>
         </ul>
-
     </div>
 </nav>

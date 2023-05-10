@@ -3,18 +3,64 @@
 {% load static %}
 
 
+
 <html lang="ru">
+
 <head>
+  <style>
+    #document {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+      }
+
+    main {
+      flex: auto;
+      background: #C0C0C0
+    }
+    footer {
+    flex-shrink: 0;
+    }
+
+    .content-info {
+        overflow-wrap: break-word;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 25px;
+        padding: 15px;
+     }
+
+    </style>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <title>Title</title>
-</head>
-<body>
-  <header>{% include "infoposts/includes/header.html" %}</header>
-  <main>
 
+    <title>
+        {% block title %}
+          HSW
+        {% endblock title %}
+    </title>
+
+</head>
+
+<body>
+  <header>
+      {% include "infoposts/includes/header.html" %}
+  </header>
+  <div id="document">
+  <main>
+      <div class="container py-5">
+          <div class="content-info">
+      {% block content %}
+        Контент не подвезли
+              <img src="{% static 'img/gg.png' %}">
+      {% endblock %}
+          </div>
+      </div>
   </main>
-  <footer>{% include "infoposts/includes/footer.html" %}</footer>
+  <footer>
+      {% include "infoposts/includes/footer.html" %}
+  </footer>
+  </div>
 </body>
 </html>
