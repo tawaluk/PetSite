@@ -1,5 +1,11 @@
 {% load static %}
 
+
+
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+
+
+
 <nav class="navbar navbar-light" style="background-color: #f6f6f6">
     <div class="container">
       <a class="navbar-brand" href="{% url 'infoposts:root' %}">
@@ -7,16 +13,15 @@
                class="d-inline-block align-top" alt="">
           <span style="color:red"><big><em>Help Start Work</em></big></span>
       </a>
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-        <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}" href="{% url 'infoposts:root' %}">Пункт 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {% if view_name == 'about:tech' %}active{% endif %}" href="{% url 'infoposts:root' %}">Пункт 2</a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link {% if view_name == 'about:author' %}active{% endif %}" href="{% url 'infoposts:root' %}">Пункт 3</a>
-      </li>
-        </ul>
+
+        <div class="dropdown">
+    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Список <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Это</a></li>
+        <li><a href="#">Говно</a></li>
+        <li><a href="#">Сильно</a></li>
+        <li><a href="#">Сопротивлялось</a></li>
+      </ul>
+  </div>
     </div>
 </nav>

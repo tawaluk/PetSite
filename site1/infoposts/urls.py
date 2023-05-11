@@ -6,4 +6,5 @@ app_name = 'infoposts'
 
 urlpatterns = [
     path('', views.root, name='root'),
+
 ]

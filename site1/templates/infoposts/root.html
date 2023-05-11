@@ -1,12 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
 
 {% block title %}
   {{ title }}
 {% endblock title %}
 
 {% block content %}
+  <div class="tablo">
+    <h1>Новости проекта:</h1>
+  </div>
 
-  <h1>Новости проекта:</h1>
-  <h3>  {{ new }}  </h3>
+
+
+    {% for new in news %}
+
+    <ul>
+      <div class="content-info-news">
+        <il>
+          <h3>Тема: {{  new.title_news  }}</h3>
+          {{ new.author }} - {{  new.pub_date|date:"d E Y"  }}
+        </il>
+
+          <h5>
+          {{  new.text  }}
+          </h5>
+
+
+        {% thumbnail new.image "300x300" crop="center" upscale=True as im %}
+          <img  src="{{ im.url }}" width="150" height="150">
+        {% endthumbnail %}
+
+      </div>
+        <h4></h4>
+    </ul>
+
+
+    {% endfor %}
+
+
 
 {% endblock content %}
