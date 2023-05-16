@@ -23,10 +23,12 @@
     }
 
     .tablo {
-       text-align: center;
-    }
-
-
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
     .content-info {
 
         overflow-wrap: break-word;
@@ -40,6 +42,11 @@
         border-radius: 25px;
         padding: 15px;
      }
+     .bck {
+         background-image: url('static/img/bck.jpeg');
+         height: 100vh;
+     }
+
 
     </style>
 
@@ -55,7 +62,7 @@
 
     <title>
         {% block title %}
-          HSW
+          delo
         {% endblock title %}
     </title>
 
@@ -67,14 +74,12 @@
   </header>
   <div id="document">
   <main>
-      <div class="container py-5">
-          <div class="content-info">
+
       {% block content %}
         Контент не подвезли
               <img src="{% static 'img/gg.png' %}">
       {% endblock %}
-          </div>
-      </div>
+
   </main>
   <footer>
       {% include "infoposts/includes/footer.html" %}

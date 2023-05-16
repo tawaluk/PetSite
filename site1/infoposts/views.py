@@ -5,12 +5,19 @@ from .forms import NewsForm
 from django.contrib.auth.decorators import login_required
 
 
-def root(request):
-    templates = 'infoposts/root.html'
+def main(request):
+    templates = 'infoposts/main.html'
+    data_root = {'title': 'delaYdelo'}
+    return render(request, template_name=templates, context=data_root)
+
+
+def news_project(request):
+    templates = 'infoposts/news-project.html'
     data_root = {
-        'title': 'HSW',
+        'title': 'delaYdelo',
         'news': NewsModel.objects.all()
 
     }
     return render(request, template_name=templates, context=data_root)
+
 

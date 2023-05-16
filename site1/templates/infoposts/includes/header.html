@@ -1,27 +1,26 @@
 {% load static %}
 
-
-
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-
-
-
-<nav class="navbar navbar-light" style="background-color: #f6f6f6">
+<div class="bck">
+<nav class="navbar navbar-light" style="background-color: rgba(128, 128, 128, 0.5);">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'infoposts:root' %}">
+      <a class="navbar-brand" href="{% url 'infoposts:main' %}">
           <img src="{% static 'img/start.jpg' %}" width="50" height="50"
                class="d-inline-block align-top" alt="">
-          <span style="color:red"><big><em>Help Start Work</em></big></span>
+          <span style="color:black"><big><em>delaYdelo</em></big></span>
       </a>
 
         <div class="dropdown">
-    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Список <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Это</a></li>
-        <li><a href="#">Говно</a></li>
-        <li><a href="#">Сильно</a></li>
-        <li><a href="#">Сопротивлялось</a></li>
+    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(128, 128, 128, 0.8);">Карта сайта <span class="caret"></span></button>
+      <ul class="dropdown-menu" style="background-color: rgba(0, 0, 0, 0.8);">
+          <li><a href="#"><h3>Юридические вопросы</h3></a></li>
+        <li><a href="#"><h3>План действий</h3></a></li>
+        <li><a href="#"><h3>Маркетплейс</h3></a></li>
+        <li><a href="#"><h3>Сопровождение</h3></a></li>
       </ul>
-  </div>
+             </div>
+
     </div>
+</div>
+
 </nav>
