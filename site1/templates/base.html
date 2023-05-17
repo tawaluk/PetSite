@@ -16,19 +16,20 @@
 
     main {
       flex: auto;
-      background: #C0C0C0
     }
     footer {
     flex-shrink: 0;
     }
 
     .tablo {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%) }
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+
     .content-info {
 
         overflow-wrap: break-word;
@@ -43,9 +44,12 @@
         padding: 15px;
      }
      .bck {
+
          background-image: url('static/img/bck.jpeg');
-         height: 100vh;
+
      }
+
+
 
 
     </style>
@@ -69,6 +73,7 @@
 </head>
 
 <body>
+<div class="bck">
   <header>
       {% include "infoposts/includes/header.html" %}
   </header>
@@ -85,6 +90,6 @@
       {% include "infoposts/includes/footer.html" %}
   </footer>
   </div>
-
+</div>
 </body>
 </html>

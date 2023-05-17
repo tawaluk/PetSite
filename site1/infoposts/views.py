@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 
 def main(request):
     templates = 'infoposts/main.html'
-    data_root = {'title': 'delaYdelo'}
+    data_root = {'title': 'Делай дело!'}
     return render(request, template_name=templates, context=data_root)
 
 
