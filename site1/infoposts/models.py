@@ -37,3 +37,23 @@ class NewsModel(models.Model):
 
         verbose_name = 'News'
 
+
+class Starting_info(models.Model):
+    """
+    Модель стартовой информации:
+    - План
+    - Юр. вопросы
+    - Маркетплэйсы
+    - Сопровождение
+    """
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='start_posts',
+        verbose_name='Автор',
+    )
+    pub_date = models.DateTimeField(auto_now=True, auto_created=True, verbose_name='Дата публикации')
+    title = models.TextField(max_length=50, verbose_name="Заголовок поста")
+    description = models.TextField(max_length=500, verbose_name="Описание поста")
+    text = models.TextField(max_length=15000, verbose_name="Текст поста")
+    content = models.FileField(verbose_name="Видеоматериал к посту")

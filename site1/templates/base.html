@@ -48,6 +48,15 @@
          background-image: url('static/img/bck.jpeg');
 
      }
+     a:link {
+    color: rgba(255, 255, 255, 0.9); /* Цвет ссылок */
+   }
+   a:visited {
+    color: rgba(255, 255, 255, 0.9); /* Цвет посещенных ссылок */
+   }
+   a:active {
+    color: rgba(255, 255, 255, 0.9); /* Цвет активной ссылки */
+   }
 
 
 
@@ -68,7 +77,7 @@
           delo
         {% endblock title %}
     </title>
-
+    <link rel="icon" href="{% static 'img/favicon.png' %}">
 </head>
 
 <body>
