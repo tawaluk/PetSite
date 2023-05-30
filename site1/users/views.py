@@ -8,6 +8,6 @@ from django.views.generic.detail import DetailView
 
 class SignUp(CreateView):
     form_class = CreationForm
-    success_url = reverse_lazy('infoposts:root')
+    success_url = reverse_lazy('infoposts:main')
     template_name = 'users/signup.html'
 

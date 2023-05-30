@@ -2,6 +2,11 @@
 
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 
+{% if user.is_authenticated %}
+
+{% endif %}
+
+
 <nav class="navbar navbar-light" style="background-color: rgba(128, 128, 128, 0.5);">
     <div class="container">
       <a class="navbar-brand" href="{% url 'infoposts:main' %}">
@@ -25,8 +30,10 @@
                 <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(128, 128, 128, 0.8);">Форум<span class="caret"></span></button>
             <ul class="dropdown-menu" style="background-color: rgba(128, 128, 128, 0.9);">
                 <li><a href="#"><h3>Общий форум</h3></a></li>
+                {% if user.is_authenticated %}
                 <li><a href="#"><h3>Мне интересно</h3></a></li>
                 <li><a href="#"><h3>Ответы</h3></a></li>
+                {% endif %}
             </ul>
         </div>
 
@@ -34,12 +41,21 @@
                 <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(128, 128, 128, 0.8);">Проекты <span class="caret"></span></button>
                 <ul class="dropdown-menu" style="background-color: rgba(128, 128, 128, 0.9);">
                     <li><a href="#"><h3>Все проекты</h3></a></li>
+                    {% if user.is_authenticated %}
                     <li><a href="#"><h3>Мои подписки</h3></a></li>
+                    {% endif %}
                 </ul>
                 <button class="btn btn-info dropdown-toggle" data-toggle="dropdown" style="background-color: rgba(128, 128, 128, 0.8);">Личный кабинет<span class="caret"></span></button>
                 <ul class="dropdown-menu" style="background-color: rgba(128, 128, 128, 0.9);">
+                    {% if user.is_authenticated %}
                     <li><a href="#"><h3>Мой аккаунт</h3></a></li>
                     <li><a href="#"><h3>Мой проект</h3></a></li>
+                    <li><a href="{% url 'users:logout' %}"><h3>Выйти</h3></a></li>
+                    {% else %}
+                    <li><a href="{% url 'users:login' %}"><h3>Войти</h3></a></li>
+                    <li><a href="{% url 'users:signup' %}"><h3>Регистрация</h3></a></li>
+
+                    {% endif %}
                 </ul>
             </div>
 
